@@ -6,4 +6,4 @@ class IndexTestCase(TestCase):
 
 	def test_get_index(self):
 		response = self.client.get("/")
-		self.asserEqual(response.status_code, 200)
+		self.assertEqual(response.status_code, 200)
