@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  run_tests:
+    runs-on: alpine-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.11
+          architecture: 'x64'
+      - name: install requirements
+        run: pip install -r requirements.txt
+      - name: Tests
+        run: python manage.py test
