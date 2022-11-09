@@ -7,12 +7,14 @@ At the moment:
 - Tests for CI created.
 - One of tests checks the main page status of the get-request. It must be equal 200.
 - One of tests checks codestyle (pep8).
+- Dockerfile created. You can put the docker image on the server and run the container.
 
 ## What tools are involved.
 
  - Python
  - Django
  - CI/CD
+ - Docker
 
 
 ## Installation
