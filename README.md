@@ -31,7 +31,22 @@ Run server.
 ```bash
   python manage.py runserver 0.0.0.0:8000
 ```
-Go to localhost page with 8000 port.
+Go to the localhost page with 8000 port.
 ```bash
   http://localhost:8000/
 ```
+## Docker image creating
+
+Create docker image drom dockerfile.
+```bash
+  docker build -t <image_name> .
+```
+Run container.
+```bash
+  docker run <image_name> -d -p <port_number>:8000
+```
+Go to the localhost page with <port_number> port.
+```bash
+  http://localhost:<port_number>/
+```
+You can do the same by copying the docker image to the server.
