@@ -1,10 +1,15 @@
-from django.test import Client, 	TestCase
+from django.test import Client, TestCase
+from django.urls import reverse
 
 
-class IndexTestCase(TestCase):
+class TestCases(TestCase):
     def setUp(self) -> None:
         self.client = Client()
 
-    def test_get_index(self):
-        response = self.client.get("/")
+    def test_main_page_status_code(self):
+        response = self.client.get(reverse("greeting"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_biography_page_status_code(self):
+        response = self.client.get(reverse("biography"))
         self.assertEqual(response.status_code, 200)
