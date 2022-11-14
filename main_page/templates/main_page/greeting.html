@@ -1,0 +1,17 @@
+{% extends 'main_page/base.html' %}
+{% block content %}
+<style>
+    .layer1 { margin-left: 1%; }
+</style>
+<body>
+    <p style="text-align: center;"><strong><span style="font-size:36px"><big><span style="font-family:Georgia,serif">Всем привет!&nbsp;😁</span></big></span></strong></p>
+    
+    <br><br>
+
+    <p class="layer1" style="text-align: justify;"><span style="font-size:26px">Меня зовут <strong>Григорий</strong> и это <strong><q>сайт-биография</q></strong>.</span></p>
+
+    <br>
+
+    <a class="layer1" style="font-size:22px" href="{% url 'biography' %}"> Немного о себе </a>
+</body>
+{% endblock content %}
