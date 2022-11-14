@@ -15,6 +15,6 @@ jobs:
       - name: install requirements
         run: pip install -r requirements.txt
       - name: check codestyle
-        run: pycodestyle ./main_page/*.py
+        run: pycodestyle .*/***/*.py
       - name: Tests
         run: python manage.py test
