@@ -1,0 +1,20 @@
+{% extends 'main_page/base.html' %}
+{% block content %}
+<style>
+    .layer1 { margin-left: 1%; }
+</style>
+<body>
+    <p class="layer1" style="text-align: justify;"><span style="font-size:26px">Содержимое <strong>проекта</strong>:</span></p>
+    {% for file in files %}
+        <p class="layer1" style="color:green"> {{file}} </p>
+    {% endfor %}
+    {% for folder in folders %}
+        <a class="layer1" style="color:black" href="{% url 'project' %}?dir={{folder}}"> {{folder}}\<br><br> </a>
+    {% endfor %}
+    {% if previous_page != 'main_page' %}
+        <a class="layer1" style="font-size:22px; color:black" href="{% url 'project' %}?dir={{previous_page}}"> Назад </a>
+        <a class="layer1" style="font-size:22px; color:black" href="{% url 'project' %}?dir=."> Содержимое проекта (начало) </a>
+    {% endif %}
+    <a class="layer1" style="font-size:22px; color:black" href="{% url 'greeting' %}"> Главная страница </a>
+</body>
+{% endblock content %}
