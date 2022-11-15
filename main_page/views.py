@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import glob
 import os
- 
+
 
 def project_files(dir: str) -> list:
     files = []
@@ -39,5 +39,7 @@ def project_view(request):
     file_path = request.GET["dir"]
     files, folders = project_files(file_path)
     previous_path = previous_page(file_path)
-    content = {"files" : files, "folders" : folders, "previous_page" : previous_path}
+    content = {"files": files,
+            "folders": folders,
+            "previous_page": previous_path}
     return render(request, 'main_page/project.html', content)
