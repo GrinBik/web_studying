@@ -13,3 +13,7 @@ class TestCases(TestCase):
     def test_biography_page_status_code(self):
         response = self.client.get(reverse("biography"))
         self.assertEqual(response.status_code, 200)
+
+    def test_project_page_status_code(self):
+        response = self.client.get("/project/?dir=.")
+        self.assertEqual(response.status_code, 200)
