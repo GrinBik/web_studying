@@ -11,6 +11,7 @@
     {% for folder in folders %}
         <a class="layer1" style="color:black" href="{% url 'project' %}?dir={{folder}}"> {{folder}}\<br><br> </a>
     {% endfor %}
+    <br><br><br>
     {% if previous_page != 'main_page' %}
         <a class="layer1" style="font-size:22px; color:black" href="{% url 'project' %}?dir={{previous_page}}"> Назад </a>
         <a class="layer1" style="font-size:22px; color:black" href="{% url 'project' %}?dir=."> Содержимое проекта (начало) </a>
